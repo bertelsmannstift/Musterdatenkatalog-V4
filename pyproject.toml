@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "musterdatenkatalog"
+version = "0.1.0"
+description = ""
+authors = ["Rahkakavee Baskaran <rahkakavee.baskaran@cause-effect.io>"]
+
+[tool.poetry.dependencies]
+python = "~3.8"
+sentence-transformers = "^2.2.2"
+datasets = "^2.8.0"
+matplotlib = "^3.6.2"
+seaborn = "^0.12.2"
+geopandas = "^0.12.2"
+geopy = "^2.3.0"
+rdflib = "^6.2.0"
+pydantic = "^1.10.4"
+openpyxl = "^3.0.10"
+python-dotenv = "^0.21.0"
+beautifulsoup4 = "^4.11.1"
+lxml = "^4.9.2"
+ipykernel = "^6.20.1"
+pytest = "^7.2.1"
+Jinja2 = "^3.1.2"
+tomark = "^0.1.4"
+httpx = "^0.24.0"
+plotly-express = "^0.4.1"
+squarify = "^0.4.3"
+
+[tool.poetry.dev-dependencies]
+black = "^22.12.0"
+pre-commit = "^2.21.0"
+mypy = "^0.991"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
