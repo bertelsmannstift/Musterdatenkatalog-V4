@@ -207,7 +207,10 @@ class Parser:
             try:
                 tag = self.soup.find("dcat:dataset").find_tree(col_tree)
                 stelle = tag.text
-                if self.df["name"].str.contains(stelle).any():
+                if (
+                    self.df["name"].str.contains(stelle).any()
+                    or self.df["name"].eq(stelle).any()
+                ):
                     row = self.df.loc[self.df["name"] == stelle, "Kommune"]
                     return row.array[0]
                 else:
