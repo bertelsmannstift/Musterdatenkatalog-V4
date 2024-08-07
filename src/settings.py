@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     CITIES_V2: Union[str, None] = None
     CITIES_V3: Union[str, None] = None
     CITIES_V4: Union[str, None] = None
+    CITIES_V5: Union[str, None] = None
     TAXONOMY_INFO_V1: Union[str, None] = None
     TAXONOMY_INFO_V2: Union[str, None] = None
 
