@@ -1,5 +1,6 @@
 """Pipeline component: scrapes data from gov data"""
 
+import datetime
 import logging
 import os
 import random
@@ -82,6 +83,16 @@ class Scraper:
 
         for el in dataset_response:
             self.current_dataset_list.append(el)
+        now = datetime.datetime.now()
+        output_file_path = os.path.join(
+            "extraction",
+            "musterdatenkatalog",
+            f"{now.year}-{now.month}-{now.day}-current_dataset_list.txt",
+        )
+        # Open the file in write mode and write each element on a new line
+        with open(output_file_path, "w") as file:
+            for item in self.current_dataset_list:
+                file.write(f"{item}\n")
 
     def save_response(self, resp: httpx.Response, file_directory: str) -> None:
         """save responses as json in a new folder
