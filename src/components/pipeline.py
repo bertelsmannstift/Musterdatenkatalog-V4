@@ -19,7 +19,7 @@ settings = Settings(_env_file="paths/.env.dev")
 
 
 GOV_DATA_RESPONSES = "extraction/gov_data_responses"
-CURRENT_CITIES_PATH = settings.CITIES_V3
+CURRENT_CITIES_PATH = settings.CITIES_V5
 MODEL_PATH = "and-effect/musterdatenkatalog_clf"
 CORPUS_PATH = settings.TAXONOMY_PROCESSED_V3
 OUTPUT_PATH = "extraction/musterdatenkatalog"
@@ -152,5 +152,9 @@ def main():
     return data
 
 
+if __name__ == "__main__":
+    main()
+if __name__ == "__main__":
+    main()
 if __name__ == "__main__":
     main()
