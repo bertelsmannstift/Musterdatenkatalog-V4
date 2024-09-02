@@ -145,7 +145,11 @@ class Parser:
 
     def get_id(self):
         try:
-            return self.soup.find("dct:identifier").text
+            identifier_tag = self.soup.find("dct:identifier")
+            if identifier_tag and identifier_tag.has_attr("rdf:resource"):
+                return identifier_tag["rdf:resource"]
+            else:
+                return identifier_tag.text if identifier_tag else float("nan")
         except Exception as e:
             logger.info(
                 f"The id could not be extracted. The following error occurred: {e}"
