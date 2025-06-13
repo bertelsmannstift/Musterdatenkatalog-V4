@@ -19,7 +19,7 @@ settings = Settings(_env_file="paths/.env.dev")
 
 
 GOV_DATA_RESPONSES = "extraction/gov_data_responses"
-CURRENT_CITIES_PATH = settings.CITIES_V5
+CURRENT_CITIES_PATH = settings.CITIES_V6
 MODEL_PATH = "and-effect/musterdatenkatalog_clf"
 CORPUS_PATH = settings.TAXONOMY_PROCESSED_V3
 OUTPUT_PATH = "extraction/musterdatenkatalog"
@@ -67,8 +67,10 @@ def _create_corpus():
     if os.path.exists(settings.TAXONOMY_PROCESSED_V3):
         logger.info(msg="The corpus already exists.")
     else:
-        from src.preprocessing.migration_taxonomy import generate_taxonomy  # noqa: F401
-        from src.preprocessing.migration_taxonomy import process_taxonomy  # noqa: F401
+        from src.preprocessing.migration_taxonomy import (
+            generate_taxonomy,  # noqa: F401
+            process_taxonomy,  # noqa: F401
+        )
 
 
 def _load_corpus():
